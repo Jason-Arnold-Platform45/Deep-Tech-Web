@@ -74,14 +74,14 @@ export default async function DashboardPage() {
       <header className="sticky top-0 z-10 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-brand-600/20 border border-brand-500/20">
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-brand-600/25 border border-brand-500/30 glow-sm">
               <span className="text-base" aria-hidden="true">
                 📡
               </span>
-              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-brand-400 animate-pulse-slow" />
+              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-accent-cyan animate-pulse-slow shadow-[0_0_8px_rgba(34,211,238,0.6)]" />
             </div>
             <div className="min-w-0">
-              <h1 className="text-lg font-bold text-gray-100 truncate tracking-tight">
+              <h1 className="text-lg font-bold truncate tracking-tight gradient-text">
                 Deep-Tech Pulse
               </h1>
               <p className="text-xs text-gray-500 hidden sm:block">
@@ -99,7 +99,7 @@ export default async function DashboardPage() {
 
       {/* ===== MAIN CONTENT ===== */}
       <main
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16"
         id="main-content"
       >
         {data.isEmpty ? (
@@ -117,8 +117,14 @@ export default async function DashboardPage() {
               <TrendingSnapshot topArticles={data.trending} />
             )}
 
+            {/* ===== DIVIDER ===== */}
+            <div className="section-divider" aria-hidden="true" />
+
             {/* ===== TOOL SPOTLIGHT ===== */}
             <ToolSpotlight tools={data.tools} />
+
+            {/* ===== DIVIDER ===== */}
+            <div className="section-divider" aria-hidden="true" />
 
             {/* ===== TABBED CONTENT SECTIONS ===== */}
             <section aria-labelledby="content-tabs-heading">
@@ -144,7 +150,7 @@ export default async function DashboardPage() {
       </main>
 
       {/* ===== FOOTER ===== */}
-      <footer className="mt-16 border-t border-white/5 bg-surface-0/80">
+      <footer className="mt-16 border-t border-brand-500/15 bg-surface-0/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-gray-500 text-xs">
             <span aria-hidden="true">📡</span>

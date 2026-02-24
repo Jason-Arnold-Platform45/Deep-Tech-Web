@@ -8,12 +8,12 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const VARIANT_CLASSES: Record<BadgeVariant, string> = {
-  default: "bg-gray-700/60 text-gray-200 border border-gray-600/30",
-  green: "bg-emerald-500/15 text-emerald-300 border border-emerald-500/20",
-  red: "bg-red-500/15 text-red-300 border border-red-500/20",
-  yellow: "bg-amber-500/15 text-amber-300 border border-amber-500/20",
-  blue: "bg-brand-500/15 text-brand-300 border border-brand-500/20",
-  gray: "bg-gray-500/10 text-gray-400 border border-gray-600/20",
+  default: "bg-gray-700/70 text-gray-100 border border-gray-500/30",
+  green: "bg-emerald-500/20 text-emerald-200 border border-emerald-400/30",
+  red: "bg-red-500/20 text-red-200 border border-red-400/30",
+  yellow: "bg-amber-500/20 text-amber-200 border border-amber-400/30",
+  blue: "bg-brand-500/20 text-brand-200 border border-brand-400/30",
+  gray: "bg-gray-500/15 text-gray-300 border border-gray-500/25",
 };
 
 /**

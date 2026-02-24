@@ -5,11 +5,11 @@ import type { ToolSpotlight as ToolSpotlightType } from "@/types";
 
 /** Known tools in display order with accent colors. */
 const TOOL_CONFIG: Record<string, { icon: string; accent: string }> = {
-  Cursor: { icon: "⚡", accent: "from-blue-500/20 to-cyan-500/10" },
-  Claude: { icon: "🧠", accent: "from-orange-500/20 to-amber-500/10" },
-  Devin: { icon: "🤖", accent: "from-purple-500/20 to-violet-500/10" },
-  Windsurf: { icon: "🌊", accent: "from-teal-500/20 to-emerald-500/10" },
-  "GitHub Copilot": { icon: "✈️", accent: "from-green-500/20 to-lime-500/10" },
+  Cursor: { icon: "⚡", accent: "from-blue-400/40 to-cyan-400/20" },
+  Claude: { icon: "🧠", accent: "from-orange-400/40 to-amber-400/20" },
+  Devin: { icon: "🤖", accent: "from-purple-400/40 to-violet-400/20" },
+  Windsurf: { icon: "🌊", accent: "from-teal-400/40 to-emerald-400/20" },
+  "GitHub Copilot": { icon: "✈️", accent: "from-green-400/40 to-lime-400/20" },
 };
 
 const KNOWN_TOOLS = [
@@ -77,9 +77,9 @@ export function ToolSpotlight({ tools }: ToolSpotlightProps) {
         </h2>
       </div>
 
-      {/* Horizontal scrolling strip */}
+      {/* 5-across grid at desktop */}
       <div
-        className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
         role="list"
       >
         {sorted.map((tool) => (
@@ -99,13 +99,13 @@ function ToolCard({ tool }: ToolCardProps) {
 
   return (
     <article
-      className="flex-none w-60 glass-card rounded-xl overflow-hidden snap-start group"
+      className="glass-card rounded-xl overflow-hidden group hover:-translate-y-1 transition-all duration-300"
       role="listitem"
       data-testid="tool-card"
       aria-label={`${tool.toolName}${tool.currentVersion ? ` ${tool.currentVersion}` : ""}`}
     >
       {/* Gradient accent header */}
-      <div className={`h-1.5 bg-gradient-to-r ${config.accent}`} />
+      <div className={`h-2 bg-gradient-to-r ${config.accent}`} />
 
       <div className="p-4">
         {/* Tool name with icon */}
@@ -131,7 +131,7 @@ function ToolCard({ tool }: ToolCardProps) {
         )}
 
         {/* Footer */}
-        <div className="flex flex-col gap-1.5 mt-auto pt-3 border-t border-white/5">
+        <div className="flex flex-col gap-1.5 mt-auto pt-3 border-t border-white/10">
           <a
             href={tool.sourceUrl}
             target="_blank"

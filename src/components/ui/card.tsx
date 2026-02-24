@@ -12,7 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export function Card({ className = "", children, ...rest }: CardProps) {
   return (
     <div
-      className={`glass-card rounded-xl overflow-hidden transition-all duration-300 ${className}`}
+      className={`glass-card rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 ${className}`}
       {...rest}
     >
       {children}
@@ -51,7 +51,7 @@ export function CardFooter({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={`px-4 py-3 border-t border-white/5 ${className}`}
+      className={`px-4 py-3 border-t border-white/10 ${className}`}
       {...rest}
     >
       {children}

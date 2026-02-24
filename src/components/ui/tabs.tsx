@@ -55,7 +55,7 @@ export function TabList({ className = "", children, ...rest }: TabListProps) {
   return (
     <div
       role="tablist"
-      className={`flex gap-1 p-1 rounded-xl bg-surface-1/80 border border-white/5 ${className}`}
+      className={`flex gap-1 p-1 rounded-xl bg-surface-1/80 border border-white/10 shadow-lg ${className}`}
       {...rest}
     >
       {children}
@@ -85,8 +85,8 @@ export function TabTrigger({
       onClick={() => setActiveTab(value)}
       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
         isActive
-          ? "bg-brand-600/20 text-brand-200 border border-brand-500/20 shadow-sm"
-          : "text-gray-400 hover:text-gray-200 hover:bg-white/5 border border-transparent"
+          ? "bg-brand-600/30 text-brand-100 border border-brand-500/30 shadow-[0_0_12px_rgba(99,102,241,0.2)]"
+          : "text-gray-400 hover:text-gray-200 hover:bg-white/8 border border-transparent hover:border-white/10"
       } ${className}`}
       {...rest}
     >

@@ -40,9 +40,9 @@ export function TrendingSnapshot({ topArticles }: TrendingSnapshotProps) {
         </h2>
       </div>
 
-      {/* Horizontal scroll on mobile; flex-row on wider screens */}
+      {/* Stack on mobile; side-by-side on wider screens */}
       <div
-        className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory"
+        className="flex flex-col md:flex-row gap-6"
         role="list"
       >
         {items.map((article, index) => (
@@ -63,14 +63,14 @@ function TrendingCard({ article, rank }: TrendingCardProps) {
 
   return (
     <article
-      className="flex-none w-80 lg:flex-1 min-w-0 glass-card rounded-xl p-5 snap-start group"
+      className={`w-full md:flex-1 min-w-0 glass-card-featured rounded-xl p-5 group ${rank === 1 ? "glow-brand" : ""}`}
       role="listitem"
       data-testid="trending-card"
       aria-label={`Trending #${rank}: ${article.title}`}
     >
       {/* Rank badge */}
       <div className="flex items-start justify-between gap-3 mb-4">
-        <div className={`flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ${gradientClass} text-white font-black text-lg shadow-lg`}>
+        <div className={`flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${gradientClass} text-white font-black text-xl shadow-lg ring-2 ring-white/10`}>
           {rank}
         </div>
         <div className="flex flex-wrap gap-1.5 justify-end">
@@ -100,8 +100,8 @@ function TrendingCard({ article, rank }: TrendingCardProps) {
       )}
 
       {/* Footer */}
-      <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
-        <span className="text-xs text-gray-500 font-medium">{article.source}</span>
+      <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/10">
+        <span className="text-xs text-gray-400 font-medium">{article.source}</span>
         <time
           className="text-xs text-gray-500"
           dateTime={new Date(article.publishedAt).toISOString()}

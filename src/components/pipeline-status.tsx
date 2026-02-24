@@ -12,25 +12,25 @@ const STATUS_CONFIG: Record<
     color: "text-emerald-400",
     dot: "bg-emerald-400",
     label: "Healthy",
-    glow: "shadow-[0_0_6px_rgba(52,211,153,0.4)]",
+    glow: "shadow-[0_0_10px_rgba(52,211,153,0.5)]",
   },
   partial: {
     color: "text-amber-400",
     dot: "bg-amber-400",
     label: "Partial",
-    glow: "shadow-[0_0_6px_rgba(251,191,36,0.4)]",
+    glow: "shadow-[0_0_10px_rgba(251,191,36,0.5)]",
   },
   running: {
     color: "text-brand-400",
     dot: "bg-brand-400",
     label: "Running",
-    glow: "shadow-[0_0_6px_rgba(129,140,248,0.4)]",
+    glow: "shadow-[0_0_10px_rgba(129,140,248,0.5)]",
   },
   failed: {
     color: "text-red-400",
     dot: "bg-red-400",
     label: "Failed",
-    glow: "shadow-[0_0_6px_rgba(248,113,113,0.4)]",
+    glow: "shadow-[0_0_10px_rgba(248,113,113,0.5)]",
   },
 };
 

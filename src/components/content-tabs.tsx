@@ -115,7 +115,7 @@ function PaginatedSection({ articles, contentType }: PaginatedSectionProps) {
   return (
     <div>
       <div
-        className={`grid gap-4 ${
+        className={`grid gap-5 ${
           contentType === "video"
             ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
             : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
@@ -135,7 +135,7 @@ function PaginatedSection({ articles, contentType }: PaginatedSectionProps) {
         <div className="mt-8 flex justify-center">
           <button
             onClick={handleLoadMore}
-            className="px-6 py-2.5 bg-brand-600/20 hover:bg-brand-600/30 text-brand-200 text-sm font-medium rounded-lg border border-brand-500/20 hover:border-brand-500/30 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 glow-sm"
+            className="px-6 py-2.5 bg-brand-600/25 hover:bg-brand-600/35 text-brand-100 text-sm font-medium rounded-lg border border-brand-500/30 hover:border-brand-500/40 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 hover:shadow-[0_0_16px_rgba(99,102,241,0.2)]"
             data-testid="load-more-button"
             aria-label={`Load more items (${articles.length - visibleCount} remaining)`}
           >

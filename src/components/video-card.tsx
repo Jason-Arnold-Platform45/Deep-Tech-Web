@@ -51,8 +51,8 @@ export function VideoCard({ article }: VideoCardProps) {
               alt={`Thumbnail for ${article.title}`}
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <span className="text-4xl">▶</span>
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="text-4xl drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">▶</span>
             </div>
           </a>
         ) : null}
@@ -84,7 +84,7 @@ export function VideoCard({ article }: VideoCardProps) {
           )}
 
           {article.whyItMatters && (
-            <p className="text-xs text-brand-300 border-l-2 border-brand-600 pl-3 py-1 bg-brand-500/5 rounded-r">
+            <p className="text-xs text-brand-200 italic border-l-2 border-brand-400 pl-3 py-1.5 bg-brand-500/10 rounded-r">
               {article.whyItMatters}
             </p>
           )}
@@ -93,7 +93,7 @@ export function VideoCard({ article }: VideoCardProps) {
         <CardFooter className="flex flex-wrap items-center gap-2">
           <UrgencyChip urgency={article.urgency} />
           <CategoryTag category={article.category} />
-          <span className="ml-auto text-xs text-gray-500 shrink-0">
+          <span className="ml-auto text-xs text-gray-400 shrink-0">
             <span>{article.source}</span>
             {" · "}
             <time
