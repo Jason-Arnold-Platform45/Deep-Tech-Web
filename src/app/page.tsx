@@ -71,18 +71,21 @@ export default async function DashboardPage() {
   return (
     <>
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-10 bg-gray-950/90 backdrop-blur border-b border-gray-800">
+      <header className="sticky top-0 z-10 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="text-xl" aria-hidden="true">
-              📡
-            </span>
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-lg bg-brand-600/20 border border-brand-500/20">
+              <span className="text-base" aria-hidden="true">
+                📡
+              </span>
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-brand-400 animate-pulse-slow" />
+            </div>
             <div className="min-w-0">
-              <h1 className="text-lg font-bold text-gray-100 truncate">
+              <h1 className="text-lg font-bold text-gray-100 truncate tracking-tight">
                 Deep-Tech Pulse
               </h1>
               <p className="text-xs text-gray-500 hidden sm:block">
-                Agentic coding intelligence — refreshed every 6 hours
+                Agentic coding intelligence &mdash; refreshed every 6 hours
               </p>
             </div>
           </div>
@@ -96,7 +99,7 @@ export default async function DashboardPage() {
 
       {/* ===== MAIN CONTENT ===== */}
       <main
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12"
         id="main-content"
       >
         {data.isEmpty ? (
@@ -119,12 +122,16 @@ export default async function DashboardPage() {
 
             {/* ===== TABBED CONTENT SECTIONS ===== */}
             <section aria-labelledby="content-tabs-heading">
-              <h2
-                id="content-tabs-heading"
-                className="text-xl font-bold text-gray-100 mb-4"
-              >
-                Latest Intelligence
-              </h2>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px flex-1 bg-gradient-to-r from-brand-500/20 to-transparent" />
+                <h2
+                  id="content-tabs-heading"
+                  className="text-xl font-bold text-gray-100 tracking-tight shrink-0"
+                >
+                  Latest Intelligence
+                </h2>
+                <div className="h-px flex-1 bg-gradient-to-l from-brand-500/20 to-transparent" />
+              </div>
               <ContentTabs
                 news={data.news}
                 videos={data.videos}
@@ -137,7 +144,7 @@ export default async function DashboardPage() {
       </main>
 
       {/* ===== FOOTER ===== */}
-      <footer className="mt-16 border-t border-gray-800 bg-gray-950">
+      <footer className="mt-16 border-t border-white/5 bg-surface-0/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-gray-500 text-xs">
             <span aria-hidden="true">📡</span>

@@ -53,7 +53,11 @@ type TabListProps = HTMLAttributes<HTMLDivElement>;
 
 export function TabList({ className = "", children, ...rest }: TabListProps) {
   return (
-    <div role="tablist" className={`flex gap-1 ${className}`} {...rest}>
+    <div
+      role="tablist"
+      className={`flex gap-1 p-1 rounded-xl bg-surface-1/80 border border-white/5 ${className}`}
+      {...rest}
+    >
       {children}
     </div>
   );
@@ -79,10 +83,10 @@ export function TabTrigger({
       aria-controls={`panel-${value}`}
       id={`tab-${value}`}
       onClick={() => setActiveTab(value)}
-      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
         isActive
-          ? "bg-gray-700 text-gray-100"
-          : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+          ? "bg-brand-600/20 text-brand-200 border border-brand-500/20 shadow-sm"
+          : "text-gray-400 hover:text-gray-200 hover:bg-white/5 border border-transparent"
       } ${className}`}
       {...rest}
     >
@@ -110,7 +114,7 @@ export function TabPanel({
       id={`panel-${value}`}
       aria-labelledby={`tab-${value}`}
       hidden={!isActive}
-      className={className}
+      className={`${isActive ? "animate-fade-in" : ""} ${className}`}
       {...rest}
     >
       {isActive ? children : null}

@@ -6,27 +6,31 @@ import type { PipelineStatus } from "@/types";
 
 const STATUS_CONFIG: Record<
   PipelineStatus,
-  { color: string; dot: string; label: string }
+  { color: string; dot: string; label: string; glow: string }
 > = {
   success: {
-    color: "text-green-400",
-    dot: "bg-green-400",
+    color: "text-emerald-400",
+    dot: "bg-emerald-400",
     label: "Healthy",
+    glow: "shadow-[0_0_6px_rgba(52,211,153,0.4)]",
   },
   partial: {
-    color: "text-yellow-400",
-    dot: "bg-yellow-400",
+    color: "text-amber-400",
+    dot: "bg-amber-400",
     label: "Partial",
+    glow: "shadow-[0_0_6px_rgba(251,191,36,0.4)]",
   },
   running: {
-    color: "text-blue-400",
-    dot: "bg-blue-400",
+    color: "text-brand-400",
+    dot: "bg-brand-400",
     label: "Running",
+    glow: "shadow-[0_0_6px_rgba(129,140,248,0.4)]",
   },
   failed: {
     color: "text-red-400",
     dot: "bg-red-400",
     label: "Failed",
+    glow: "shadow-[0_0_6px_rgba(248,113,113,0.4)]",
   },
 };
 
@@ -85,7 +89,7 @@ export async function PipelineStatus() {
       aria-label={`Pipeline status: ${config.label}`}
     >
       <span
-        className={`inline-block w-2 h-2 rounded-full ${config.dot}`}
+        className={`inline-block w-2 h-2 rounded-full ${config.dot} ${config.glow}`}
         aria-hidden="true"
       />
       <span className={config.color}>{config.label}</span>
@@ -94,7 +98,7 @@ export async function PipelineStatus() {
       </span>
       {lastRun.sourcesFailed != null && lastRun.sourcesFailed > 0 && (
         <span
-          className="text-yellow-500 text-xs"
+          className="text-amber-500 text-xs"
           aria-label={`${lastRun.sourcesFailed} source(s) failed`}
         >
           ({lastRun.sourcesFailed} source{lastRun.sourcesFailed !== 1 ? "s" : ""} failed)

@@ -22,10 +22,10 @@ export function VideoCard({ article }: VideoCardProps) {
 
   return (
     <article data-testid="video-card" aria-label={article.title}>
-      <Card className="h-full flex flex-col hover:border-gray-700 transition-colors">
+      <Card className="h-full flex flex-col group overflow-hidden">
         {/* YouTube embed — no API key needed, only videoId */}
         {article.videoId ? (
-          <div className="relative w-full aspect-video bg-gray-950 rounded-t-xl overflow-hidden">
+          <div className="relative w-full aspect-video bg-surface-0 overflow-hidden">
             <iframe
               src={`https://www.youtube.com/embed/${article.videoId}`}
               title={article.title}
@@ -42,15 +42,18 @@ export function VideoCard({ article }: VideoCardProps) {
             href={article.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full aspect-video bg-gray-950 rounded-t-xl overflow-hidden"
+            className="block w-full aspect-video bg-surface-0 overflow-hidden relative"
             data-testid="video-thumbnail-link"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={article.thumbnailUrl}
               alt={`Thumbnail for ${article.title}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <span className="text-4xl">▶</span>
+            </div>
           </a>
         ) : null}
 
@@ -66,7 +69,7 @@ export function VideoCard({ article }: VideoCardProps) {
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:underline"
+              className="hover:text-brand-300 transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
               data-testid="video-link"
             >
               {article.title}
@@ -75,13 +78,13 @@ export function VideoCard({ article }: VideoCardProps) {
 
           {/* Summary */}
           {article.summary && (
-            <p className="text-sm text-gray-400 line-clamp-2 flex-1">
+            <p className="text-sm text-gray-400 line-clamp-2 flex-1 leading-relaxed">
               {article.summary}
             </p>
           )}
 
           {article.whyItMatters && (
-            <p className="text-xs text-blue-300 border-l-2 border-blue-700 pl-2">
+            <p className="text-xs text-brand-300 border-l-2 border-brand-600 pl-3 py-1 bg-brand-500/5 rounded-r">
               {article.whyItMatters}
             </p>
           )}

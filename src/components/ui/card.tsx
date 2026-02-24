@@ -6,13 +6,13 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Reusable surface card with the project's dark-theme styling.
+ * Reusable surface card with glassmorphism dark-theme styling.
  * Renders a <div> so it can be nested inside any semantic element.
  */
 export function Card({ className = "", children, ...rest }: CardProps) {
   return (
     <div
-      className={`bg-gray-900 border border-gray-800 rounded-xl overflow-hidden ${className}`}
+      className={`glass-card rounded-xl overflow-hidden transition-all duration-300 ${className}`}
       {...rest}
     >
       {children}
@@ -51,7 +51,7 @@ export function CardFooter({
 }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={`px-4 py-3 border-t border-gray-800 ${className}`}
+      className={`px-4 py-3 border-t border-white/5 ${className}`}
       {...rest}
     >
       {children}

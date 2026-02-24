@@ -26,7 +26,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <article data-testid="article-card" aria-label={article.title}>
-      <Card className="h-full flex flex-col hover:border-gray-700 transition-colors">
+      <Card className="h-full flex flex-col group">
         <CardContent className="flex-1 flex flex-col gap-3">
           {/* Top badges row */}
           <div className="flex flex-wrap items-center gap-2 pt-0">
@@ -44,7 +44,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:underline"
+              className="hover:text-brand-300 transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
               data-testid="article-link"
             >
               {article.title}
@@ -53,14 +53,14 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
           {/* Summary / raw content */}
           {displayContent && (
-            <p className="text-sm text-gray-400 line-clamp-3 flex-1">
+            <p className="text-sm text-gray-400 line-clamp-3 flex-1 leading-relaxed">
               {displayContent}
             </p>
           )}
 
           {/* Why it matters */}
           {article.whyItMatters && !isRaw && (
-            <p className="text-xs text-blue-300 border-l-2 border-blue-700 pl-2">
+            <p className="text-xs text-brand-300 border-l-2 border-brand-600 pl-3 py-1 bg-brand-500/5 rounded-r">
               {article.whyItMatters}
             </p>
           )}

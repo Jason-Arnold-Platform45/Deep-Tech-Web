@@ -11,6 +11,12 @@ interface TrendingSnapshotProps {
   topArticles: Article[];
 }
 
+const RANK_STYLES = [
+  "from-amber-400 to-yellow-600",   // #1 gold
+  "from-gray-300 to-gray-500",      // #2 silver
+  "from-amber-600 to-orange-800",   // #3 bronze
+];
+
 /**
  * Trending Snapshot — hero section showing the top 3 trending articles.
  * Server Component: data is passed in from the parent page.
@@ -24,12 +30,15 @@ export function TrendingSnapshot({ topArticles }: TrendingSnapshotProps) {
 
   return (
     <section aria-labelledby="trending-heading" data-testid="trending-snapshot">
-      <h2
-        id="trending-heading"
-        className="text-xl font-bold text-gray-100 mb-4"
-      >
-        Trending Now
-      </h2>
+      <div className="flex items-center gap-3 mb-6">
+        <span className="text-2xl animate-pulse-slow" aria-hidden="true">🔥</span>
+        <h2
+          id="trending-heading"
+          className="text-2xl font-bold gradient-text tracking-tight"
+        >
+          Trending Now
+        </h2>
+      </div>
 
       {/* Horizontal scroll on mobile; flex-row on wider screens */}
       <div
@@ -50,22 +59,21 @@ interface TrendingCardProps {
 }
 
 function TrendingCard({ article, rank }: TrendingCardProps) {
+  const gradientClass = RANK_STYLES[rank - 1] ?? RANK_STYLES[2];
+
   return (
     <article
-      className="flex-none w-80 lg:flex-1 min-w-0 bg-gray-900 border border-gray-800 rounded-xl p-5 snap-start hover:border-gray-700 transition-colors"
+      className="flex-none w-80 lg:flex-1 min-w-0 glass-card rounded-xl p-5 snap-start group"
       role="listitem"
       data-testid="trending-card"
       aria-label={`Trending #${rank}: ${article.title}`}
     >
       {/* Rank badge */}
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <span
-          className="text-3xl font-black text-gray-700 leading-none select-none"
-          aria-hidden="true"
-        >
-          #{rank}
-        </span>
-        <div className="flex flex-wrap gap-1 justify-end">
+      <div className="flex items-start justify-between gap-3 mb-4">
+        <div className={`flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br ${gradientClass} text-white font-black text-lg shadow-lg`}>
+          {rank}
+        </div>
+        <div className="flex flex-wrap gap-1.5 justify-end">
           <UrgencyChip urgency={article.urgency} />
           <CategoryTag category={article.category} />
         </div>
@@ -77,7 +85,7 @@ function TrendingCard({ article, rank }: TrendingCardProps) {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-400 transition-colors focus-visible:outline-none focus-visible:underline"
+          className="hover:text-brand-300 transition-colors duration-200 focus-visible:outline-none focus-visible:underline"
           data-testid="trending-card-link"
         >
           {article.title}
@@ -92,8 +100,8 @@ function TrendingCard({ article, rank }: TrendingCardProps) {
       )}
 
       {/* Footer */}
-      <div className="flex items-center justify-between mt-auto pt-2 border-t border-gray-800">
-        <span className="text-xs text-gray-500">{article.source}</span>
+      <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
+        <span className="text-xs text-gray-500 font-medium">{article.source}</span>
         <time
           className="text-xs text-gray-500"
           dateTime={new Date(article.publishedAt).toISOString()}

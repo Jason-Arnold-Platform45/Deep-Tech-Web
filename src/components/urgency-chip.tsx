@@ -10,17 +10,17 @@ const URGENCY_CONFIG: Record<
   { icon: string; label: string; variant: "red" | "yellow" | "blue" }
 > = {
   use_now: {
-    icon: "🔴",
+    icon: "⚡",
     label: "Use Now",
     variant: "red",
   },
   watch_this_week: {
-    icon: "🟡",
+    icon: "👀",
     label: "Watch This Week",
     variant: "yellow",
   },
   coming_soon: {
-    icon: "🔵",
+    icon: "🔮",
     label: "Coming Soon",
     variant: "blue",
   },
