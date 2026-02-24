@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && cp -r .next/static .next/standalone/.next/static && (cp -r public .next/standalone/public 2>/dev/null || true)",
+    "start": "node .next/standalone/server.js",
     "lint": "next lint",
     "pipeline:refresh": "tsx src/lib/pipeline/runner.ts"
   },
