@@ -1,0 +1,26 @@
+{
+  "beadId": "Deep-Tech-37j",
+  "agent": "dashboard-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-c6w",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm tsc --noEmit && pnpm eslint src/components/new-badge.tsx src/lib/hooks/use-last-visited.ts --quiet",
+  "verifyOutput": "TSC clean. ESLint clean.",
+  "filesModified": [
+    "src/components/new-badge.tsx",
+    "src/lib/hooks/use-last-visited.ts"
+  ],
+  "summary": "NEW badge component + useLastVisited localStorage hook for unseen article highlighting."
+}

@@ -1,0 +1,27 @@
+{
+  "beadId": "Deep-Tech-wkd",
+  "agent": "pipeline-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-jl1",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/pipeline/youtube.test.ts && pnpm tsc --noEmit",
+  "verifyOutput": "20 tests passed. TSC clean.",
+  "filesModified": [
+    "src/lib/pipeline/youtube.ts",
+    "tests/unit/pipeline/youtube.test.ts",
+    "vitest.config.ts"
+  ],
+  "summary": "YouTube Data API with playlistItems.list (not search.list), 4 channels, quota-aware, per-channel isolation. 20 unit tests."
+}

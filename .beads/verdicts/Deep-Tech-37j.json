@@ -1,0 +1,9 @@
+{
+  "beadId": "Deep-Tech-37j",
+  "verdict": "APPROVED",
+  "specReferences": ["tasks.md#task-4.6"],
+  "issuesFound": [],
+  "independentVerifyOutput": "new-badge.tsx: Renders green NEW pill badge via Badge variant=\"green\", returns null when isNew=false, has data-testid and aria-label. use-last-visited.ts: \"use client\" directive present, localStorage read/write with key \"deep-tech-pulse-last-visited\", exports useLastVisited hook with isNew(publishedAt) returning boolean, matches CLAUDE.md pattern exactly. First-visit behavior (lastVisited=0) marks all content as new.",
+  "independentTscOutput": "pnpm tsc --noEmit — zero errors, clean exit.",
+  "reviewedBy": "review-agent"
+}

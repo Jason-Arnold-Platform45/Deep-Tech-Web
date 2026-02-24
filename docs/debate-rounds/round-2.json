@@ -1,0 +1,26 @@
+{
+  "round": 2,
+  "score": 7,
+  "status": "NOT READY",
+  "flawsRemaining": [
+    "QStash webhook signature verification not explicitly spec'd as security gate",
+    "Tool Spotlight sources incorrect — Cursor changelog is cursor.com not GitHub releases",
+    "First-run seed strategy missing — dashboard launches empty",
+    "LLM JSON output has no schema validation — malformed responses crash pipeline"
+  ],
+  "flawsResolvedThisRound": [
+    "Vercel cron limitation → QStash free tier with signing",
+    "Trending algorithm → external signal aggregation with composite score",
+    "Tool Spotlight sourcing → per-tool RSS/API with data model",
+    "Privacy notice → minimal meta statement, no PII collection",
+    "Pipeline health → pipeline_runs table + header status indicator",
+    "Content safety → added to LLM prompt as contentSafe field",
+    "Gemini Flash validation → provider abstraction + benchmark task in build"
+  ],
+  "newFlawsFound": [
+    "QStash webhook signature verification not spec'd",
+    "Tool Spotlight sources incorrect for Cursor/Claude",
+    "First-run empty state with 7-day content limit",
+    "LLM JSON output schema validation missing"
+  ]
+}

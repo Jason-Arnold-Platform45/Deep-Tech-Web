@@ -1,0 +1,27 @@
+{
+  "beadId": "Deep-Tech-8wq",
+  "agent": "intelligence-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-sm4",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/ai/schemas.test.ts && pnpm tsc --noEmit",
+  "verifyOutput": "28 tests passed. TSC clean.",
+  "filesModified": [
+    "src/lib/ai/schemas.ts",
+    "src/lib/ai/provider.ts",
+    "tests/unit/ai/schemas.test.ts"
+  ],
+  "summary": "Zod ArticleAnalysisSchema validation + retry with schema hint. Parse failures retry once then mark unsummarized. 28 tests."
+}

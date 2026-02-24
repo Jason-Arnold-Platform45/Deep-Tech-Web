@@ -1,0 +1,9 @@
+{
+  "beadId": "Deep-Tech-sm4",
+  "verdict": "APPROVED",
+  "specReferences": ["tasks.md#task-3.1"],
+  "issuesFound": [],
+  "independentVerifyOutput": "58 tests passed (28 in schemas.test.ts, 30 in prompts.test.ts). 2 test files, 0 failures. Duration 11.44s.",
+  "independentTscOutput": "pnpm tsc --noEmit exited cleanly with 0 errors.",
+  "reviewedBy": "review-agent"
+}

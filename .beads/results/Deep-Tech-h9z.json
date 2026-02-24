@@ -1,0 +1,25 @@
+{
+  "beadId": "Deep-Tech-h9z",
+  "agent": "dashboard-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-e55",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm tsc --noEmit && pnpm eslint src/components/trending-snapshot.tsx --quiet",
+  "verifyOutput": "TSC clean. ESLint clean.",
+  "filesModified": [
+    "src/components/trending-snapshot.tsx"
+  ],
+  "summary": "Trending snapshot hero section — top 3 articles by trendingScore with urgency chips and category tags."
+}

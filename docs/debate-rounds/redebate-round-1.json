@@ -1,0 +1,19 @@
+{
+  "round": "R1 (redebate)",
+  "score": 9,
+  "status": "ALMOST",
+  "context": "Railway hosting migration + zero-cost constraint",
+  "flawsRemaining": [
+    "next.config.ts must include output: 'standalone' for Railway — not yet in acceptance criteria",
+    "Railway env vars must be set on both web and cron services — not yet in gotchas"
+  ],
+  "flawsResolvedThisRound": [
+    "QStash webhook security eliminated — Railway cron is internal process",
+    "QStash free tier limits eliminated — included in Railway Hobby",
+    "@upstash/qstash dependency removed"
+  ],
+  "newFlawsFound": [
+    "Railway standalone output mode needs explicit config",
+    "Railway env vars need duplication across services"
+  ]
+}

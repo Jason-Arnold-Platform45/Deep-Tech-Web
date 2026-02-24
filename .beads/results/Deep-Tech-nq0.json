@@ -1,0 +1,26 @@
+{
+  "beadId": "Deep-Tech-nq0",
+  "agent": "pipeline-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-wkd",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/pipeline/dedup.test.ts && pnpm tsc --noEmit",
+  "verifyOutput": "29 tests passed. TSC clean.",
+  "filesModified": [
+    "src/lib/pipeline/dedup.ts",
+    "tests/unit/pipeline/dedup.test.ts"
+  ],
+  "summary": "Dedup engine with URL hash SHA-256 + Jaccard title similarity > 0.8. 29 unit tests."
+}

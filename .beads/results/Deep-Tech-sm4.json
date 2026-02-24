@@ -1,0 +1,31 @@
+{
+  "beadId": "Deep-Tech-sm4",
+  "agent": "intelligence-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-msw",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/ai/ && pnpm tsc --noEmit",
+  "verifyOutput": "58 tests passed across schemas.test.ts and prompts.test.ts. TSC clean.",
+  "filesModified": [
+    "src/lib/ai/provider.ts",
+    "src/lib/ai/claude.ts",
+    "src/lib/ai/openai.ts",
+    "src/lib/ai/schemas.ts",
+    "src/lib/ai/prompts.ts",
+    "tests/unit/ai/schemas.test.ts",
+    "tests/unit/ai/prompts.test.ts"
+  ],
+  "summary": "AI provider abstraction with Claude Haiku primary + OpenAI GPT-4o-mini fallback. Zod validation + retry. 58 tests."
+}

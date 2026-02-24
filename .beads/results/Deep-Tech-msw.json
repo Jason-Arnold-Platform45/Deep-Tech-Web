@@ -1,0 +1,26 @@
+{
+  "beadId": "Deep-Tech-msw",
+  "agent": "pipeline-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-nq0",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/pipeline/tools.test.ts && pnpm tsc --noEmit",
+  "verifyOutput": "16 tests passed. TSC clean.",
+  "filesModified": [
+    "src/lib/pipeline/tools.ts",
+    "tests/unit/pipeline/tools.test.ts"
+  ],
+  "summary": "Tool Spotlight scraper for 5 tools (Cursor, Claude, Devin, Windsurf, GitHub Copilot). Per-tool isolation. 16 unit tests."
+}

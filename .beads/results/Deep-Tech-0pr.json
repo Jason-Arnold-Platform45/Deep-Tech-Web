@@ -1,0 +1,27 @@
+{
+  "beadId": "Deep-Tech-0pr",
+  "agent": "infra-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-20o",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm tsc --noEmit",
+  "verifyOutput": "TSC_EXIT=0 - no errors",
+  "filesModified": [
+    "src/lib/db/schema.ts",
+    "src/lib/db/index.ts",
+    "drizzle.config.ts"
+  ],
+  "summary": "Drizzle ORM schema with postgres.js driver. Tables: articles, tool_spotlight, pipeline_runs with all indexes per spec"
+}

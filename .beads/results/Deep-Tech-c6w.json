@@ -1,0 +1,28 @@
+{
+  "beadId": "Deep-Tech-c6w",
+  "agent": "dashboard-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-d47",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm tsc --noEmit && pnpm eslint src/components/article-card.tsx src/components/video-card.tsx src/components/urgency-chip.tsx src/components/category-tag.tsx --quiet",
+  "verifyOutput": "TSC clean. ESLint clean.",
+  "filesModified": [
+    "src/components/article-card.tsx",
+    "src/components/video-card.tsx",
+    "src/components/urgency-chip.tsx",
+    "src/components/category-tag.tsx"
+  ],
+  "summary": "Article card + video card components with urgency chips, category tags, external links. YouTube iframe embed."
+}

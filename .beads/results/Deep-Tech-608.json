@@ -1,0 +1,26 @@
+{
+  "beadId": "Deep-Tech-608",
+  "agent": "intelligence-agent",
+  "status": "ready_for_review",
+  "previousBeadId": "Deep-Tech-8wq",
+  "gatesPassed": {
+    "codeComplete": true,
+    "filesSaved": true,
+    "verifyPassed": true,
+    "acceptanceMet": true,
+    "noRemainingWork": true,
+    "followsPatterns": true,
+    "linterPassed": true,
+    "inputValidation": true,
+    "errorHandling": true,
+    "noHardcodedSecrets": true
+  },
+  "todoCount": 0,
+  "verifyCommand": "pnpm vitest run tests/unit/ai/prompts.test.ts && pnpm tsc --noEmit",
+  "verifyOutput": "30 tests passed. TSC clean.",
+  "filesModified": [
+    "src/lib/ai/prompts.ts",
+    "tests/unit/ai/prompts.test.ts"
+  ],
+  "summary": "Noise filter (relevanceScore<40, isGenericAINoise) + content safety quarantine. resolveDisplayDecision(). 30 tests."
+}
